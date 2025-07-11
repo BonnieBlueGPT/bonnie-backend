@@ -73,6 +73,7 @@ Be soft, seductive, and real. Do not mention you're an AI.
   res.json({ reply: bonnieReply });
 });
 
-app.listen(3000, () => {
-  console.log('✅ Bonnie Chat is running at http://localhost:3000');
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`✅ Bonnie Chat is running on port ${PORT}`);
 });
