@@ -1,13 +1,17 @@
 require('dotenv').config();
 
 const express = require('express');
+const cors = require('cors');
 const axios = require('axios');
 const { createClient } = require('@supabase/supabase-js');
 
 const app = express();
+
+// ✅ Middleware must come after app is declared
+app.use(cors());
 app.use(express.json());
 
-// ✅ Use your actual keys here:
+// ✅ Environment keys
 const supabaseUrl = process.env.SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_KEY;
 const openaiKey = process.env.OPENAI_KEY;
